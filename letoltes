@@ -1,20 +1,13 @@
 #http://mek.oszk.hu/02200/02285/02285.rtf
 
-import urllib3
+import urllib.request
+import pandas
 
 
-http = urllib3.PoolManager()
-szoveg = http.request('GET',"http://mek.oszk.hu/02200/02285/02285.rtf")
+url = "http://mek.oszk.hu/02200/02285/02285.rtf"
+cel_fajlnev = "test.txt"
 
-#with open('test.txt','wb') as output:
-#    output.write(szoveg.read())
+urllib.request.urlretrieve(url, cel_fajlnev)
 
-#>>> import urllib3
-#>>> http = urllib3.PoolManager()
-#>>> r = http.request('GET', 'http://httpbin.org/robots.txt')
-#>>> r.status
-#200
-#>>> r.data
-#'User-agent: *\nDisallow: /deny\n'
    
 #pandas - konvertálni a szöveget, excelt, htmlt...
